@@ -1,7 +1,693 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Work In Progress</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Wikipedia Template</title><style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+    
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    
+    mark {
+        background-color: transparent;
+    }
+    
+    .indented {
+        padding-left: 1.5em;
+    }
+    
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .collection-content {
+        font-size: 0.875rem;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+    
+    table {
+        border-left: none;
+        border-right: none;
+    }
+    
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+    
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+    
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+    
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+    
+    ul > li {
+        list-style: disc;
+    }
+    
+    ul.to-do-list {
+        padding-inline-start: 0;
+    }
+    
+    ul.to-do-list > li {
+        list-style: none;
+    }
+    
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+    
+    ul.toggle > li {
+        list-style: none;
+    }
+    
+    ul {
+        padding-inline-start: 1.7em;
+    }
+    
+    ul > li {
+        padding-left: 0.1em;
+    }
+    
+    ol {
+        padding-inline-start: 1.6em;
+    }
+    
+    ol > li {
+        padding-left: 0.2em;
+    }
+    
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+    
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+    
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+    
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+    
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+    
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+    
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+    
+    .page-description {
+        margin-bottom: 2em;
+    }
+    
+    .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+    }
+    .simple-table td {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table th {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+    }
+    .simple-table-header {
+        font-weight: 500;
+    }
+    
+    time {
+        opacity: 0.5;
+    }
+    
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+    
+    img.icon {
+        border-radius: 3px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+    
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+    
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+    
+    p > .user {
+        opacity: 0.5;
+    }
+    
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+    
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+    
+    code {
+        color: #eb5757;
+    }
+    
+    .code {
+        padding: 1.5em 1em;
+    }
+    
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+    
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+    
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+    
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+    
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+    
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+    .select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+    .select-value-color-pageGlass { background-color: undefined; }
+    .select-value-color-washGlass { background-color: undefined; }
+    
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+        
+    </style></head><body><article id="1619c624-7d41-404c-8d9d-734b13d3ad31" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Wikipedia%20Template%201619c6247d41404c8d9d734b13d3ad31/icons8-wikipedia-logo-280.png"/></div><h1 class="page-title">Wikipedia Template</h1><p class="page-description"></p></header><div class="page-body"><hr id="a3ed3252-39a6-4228-ad6f-05e0b4c38aa9"/><div id="378663f1-b5f5-4328-a39c-1ec2b39c09c1" class="column-list"><div id="c1bfd391-8321-42cd-bf24-070ea8a9269a" style="width:75%" class="column"><p id="71f8b357-0aa9-4d60-a3a9-d7fa2e4c7df9" class=""><em>&quot;Quote here&quot;</em></p><p id="0a7325e0-b3e7-4486-9d50-2b70e6cf162a" class="">—- Who said quote</p><p id="f9631f59-94a7-4275-a180-578f5a7e262d" class="">
+    </p><p id="09369111-d74f-4a20-a497-3fbf9760f135" class=""><mark class="highlight-yellow_background">Introductory paragraph. </mark>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. </p><p id="89199f70-9090-4a1c-a115-fa3cefbcfd72" class="">
+    </p><ul id="6226ed15-5b07-446d-b97c-d1581b482c99" class="toggle"><li><details open=""><summary><strong>Contents</strong></summary><div id="426b82e8-4110-49da-872a-16f3e58141b3" class="column-list"><div id="6742d472-3baf-461e-8ae6-0691165e3e98" style="width:31.25%" class="column"><nav id="1c106b92-b1d4-420f-8da6-e261d572eecc" class="block-color-gray_background table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#057a1210-36b9-4b6a-9796-0bef590f436c">History</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8cd47c3f-142a-43f7-b944-6e4d3c5fe65a">Appearance</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c63c51e0-9917-4399-9060-a1d68a09a298">Personality</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#17c38133-d38a-4c3f-a4ee-8e24d3782c85">Abilities</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#79097c67-1890-4109-b9b8-557b67531f85">Powers</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#120dc9b1-a4a5-44aa-8b2f-f8558f3a03eb">Weaknesses</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3c6a5def-2fbf-4dce-8cd6-3f0f7d2c6aac">Relationships</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#caa17abd-fa5e-4502-aef7-69c4bfe9945d">Friends &amp; Allies</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#56219e66-452f-46bb-aeeb-11709cdd83c7">Enemies</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#679e7dea-ed20-444a-a6fe-042436671c7f">Trivia</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b321db95-f2da-43fa-a042-611b8bcc31da">Gallery</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#09b7a611-bdcd-473f-8a1f-bd3e7fb41b9c">Full Name</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#609cea48-7ef8-4134-a85a-0c45314be816"><strong>General Information</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c8b9fbe5-dc1b-41b5-be28-beaec8c0eab0"><strong>Characteristics</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6dc3bcba-3029-4a6d-a8df-ffb79fce0f03"><strong>Extended Information</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f954564c-40a1-4cb7-b12f-1f64df2c2db4">Delete everything from here to bottom of the page!</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5535e94d-d0c3-4f8c-a00c-35059aad4c81">How to edit the sidebar</a></div></nav></div><div id="903f1137-2c71-465a-b73b-3640dcdfe6b0" style="width:68.75%" class="column"><p id="4e210e58-cf7c-4b60-945f-6b73bd37561a" class="">
+    </p></div></div></details></li></ul><h2 id="057a1210-36b9-4b6a-9796-0bef590f436c" class="">History</h2><hr id="a6b97570-90ba-40e3-adec-36b0d505225c"/><p id="64b42f11-9e26-4aad-9abd-3bdbac0a58f1" class="">Nulla scelerisque, arcu sed faucibus viverra, nisl lorem tincidunt leo, eget tempus nunc nisl convallis arcu. Maecenas vulputate pellentesque enim nec tempus. Maecenas congue convallis diam. Phasellus gravida eleifend risus id malesuada. Fusce lacus leo, dapibus et viverra ut, varius id mauris. Ut eu vehicula sem. Maecenas mi tellus, venenatis sit amet ligula nec, gravida malesuada purus.</p><h2 id="8cd47c3f-142a-43f7-b944-6e4d3c5fe65a" class="">Appearance</h2><hr id="495793ec-8c5f-4cd0-ac7c-5c2c1eb8081e"/><p id="af1436f5-4f70-40b2-9e43-5f3aa7def360" class="">Suspendisse eu eros hendrerit, molestie dui id, gravida sem. Fusce porta nisi non elementum ornare. Aenean porttitor elementum blandit. Nulla faucibus sem at arcu fermentum, quis commodo purus suscipit. Nunc felis odio, fermentum eu sem fermentum, laoreet mollis justo. Sed id mattis sem. Etiam vitae quam laoreet, auctor ex vel, tempor justo. Nam viverra turpis et diam consequat, id tristique elit tempus.</p><h2 id="c63c51e0-9917-4399-9060-a1d68a09a298" class="">Personality</h2><hr id="770c3b50-3cbb-48de-82d1-8244c543e917"/><p id="907d1b61-3204-4fa3-ad0f-23e07866689a" class="">In malesuada vehicula vehicula. Aenean a nisl congue, pulvinar sapien at, fermentum orci. Nullam porta ultrices sem. Sed a volutpat neque, quis finibus massa. Pellentesque viverra ante est, id aliquet arcu iaculis in. Nunc finibus mi erat, ac interdum lorem fermentum in. In hac habitasse platea dictumst. Nulla venenatis volutpat sem ac sollicitudin. Aenean nec varius ante, sit amet maximus nulla. Proin pharetra elit in turpis elementum semper. Ut consectetur orci non lacinia maximus. Vivamus semper, sem id vestibulum tempus, nibh sem feugiat lectus, at dignissim augue quam sed nisi. Etiam porttitor dictum arcu vel tempus. Cras eu tortor ullamcorper, tempus tellus a, congue lectus. Integer vitae erat viverra, fermentum turpis nec, gravida libero. In luctus fermentum leo id sagittis.</p><h2 id="17c38133-d38a-4c3f-a4ee-8e24d3782c85" class="">Abilities</h2><hr id="b629ce2b-7bf3-42db-8f7f-62144b804f16"/><p id="5ba2125a-5a14-454d-8d7e-c4315ee4935b" class="">In sit amet libero facilisis, malesuada lectus id, volutpat neque. Proin placerat tincidunt sapien, quis auctor ante congue ut. Nunc mollis efficitur neque. Phasellus posuere ipsum lectus, sit amet mollis purus iaculis vitae. Donec commodo, lectus vitae malesuada ultrices, nulla felis tempor urna, non porta velit elit id magna. Curabitur faucibus elit non arcu mattis, ac placerat nisi fringilla. Sed tempor massa vehicula, finibus libero eu, eleifend justo.</p><h3 id="79097c67-1890-4109-b9b8-557b67531f85" class="">Powers</h3><ul id="2754a4c4-5661-448e-b3ae-0e081edbeba2" class="bulleted-list"><li style="list-style-type:disc">Nullam egestas sodales ligula nec pulvinar. </li></ul><h3 id="120dc9b1-a4a5-44aa-8b2f-f8558f3a03eb" class="">Weaknesses</h3><ul id="0eab6f79-af8d-4277-a20b-f2f0299d912c" class="bulleted-list"><li style="list-style-type:disc">Phasellus consectetur ante velit, eleifend vulputate turpis consectetur id. </li></ul><h2 id="3c6a5def-2fbf-4dce-8cd6-3f0f7d2c6aac" class="">Relationships</h2><hr id="3e660e7e-e526-41c4-a0ee-f4f774924daf"/><h3 id="caa17abd-fa5e-4502-aef7-69c4bfe9945d" class="">Friends &amp; Allies</h3><ul id="313d0162-ce81-489d-8532-5f3fd6d52389" class="bulleted-list"><li style="list-style-type:disc">Mauris finibus est vitae urna lacinia tempor.</li></ul><h3 id="56219e66-452f-46bb-aeeb-11709cdd83c7" class="">Enemies</h3><ul id="cb7051c6-86aa-43fb-ba89-60fb73907c90" class="bulleted-list"><li style="list-style-type:disc">In hac habitasse platea dictumst.</li></ul><h2 id="679e7dea-ed20-444a-a6fe-042436671c7f" class="">Trivia</h2><hr id="264c305f-3310-428a-8fb1-520ce331bc8f"/><ul id="616e0418-8ad8-4017-bbca-545a79c28d05" class="bulleted-list"><li style="list-style-type:disc">Nullam nec convallis diam, nec placerat nisi. Aliquam hendrerit ipsum cursus nisi consectetur varius.</li></ul><ul id="451d21e2-8f50-44f8-b933-973f748d4f0b" class="bulleted-list"><li style="list-style-type:disc">Vestibulum mi nisl, tincidunt in turpis eget, vulputate congue ligula.</li></ul><ul id="d043304b-f4ab-45f7-812c-94fd9f34144f" class="bulleted-list"><li style="list-style-type:disc">Suspendisse non efficitur nisi. Vivamus tortor risus, lobortis a tristique a, pulvinar at tortor.</li></ul><h2 id="b321db95-f2da-43fa-a042-611b8bcc31da" class="">Gallery</h2><hr id="6a0ed8af-014d-49d6-b4fb-b414cba86a8c"/><div id="8c69d141-3150-41cb-a198-9fa4be1ced8f" class="column-list"><div id="b1e9de02-ca34-484d-ad4e-65d9a709a2bd" style="width:33.333333333333336%" class="column"><figure id="235d21f4-c4a0-4c84-8c29-e47d4779cfa2" class="image"><a href="https://www.notion.so"><img src="https://www.notion.so"/></a></figure></div><div id="7993e5d9-3699-4039-aea5-e7ac6f6f33f2" style="width:33.333333333333336%" class="column"><figure id="5631d57d-e8dd-4dd7-94f9-5efcb24c9031" class="image"><a href="https://www.notion.so"><img src="https://www.notion.so"/></a></figure></div><div id="5fcdd497-7bca-4feb-b56a-bcc4506a56a3" style="width:33.33333333333333%" class="column"><figure id="2e41fe78-0e0e-4003-b5fb-f180865156e7" class="image"><a href="https://www.notion.so"><img src="https://www.notion.so"/></a></figure></div></div></div><div id="190e997f-9dfa-498f-b5c7-05a7fb8d34e6" style="width:25%" class="column"><h3 id="09b7a611-bdcd-473f-8a1f-bd3e7fb41b9c" class="block-color-gray_background">Full Name</h3><figure id="267f5d05-6ed9-462b-830d-a398acb42fef" class="image"><a href="https://www.notion.so"><img src="https://www.notion.so"/></a></figure><h3 id="609cea48-7ef8-4134-a85a-0c45314be816" class="block-color-gray_background"><strong>General Information</strong></h3><div id="b02d607e-3eed-4210-9234-2d35229c807e" class="column-list"><div id="8d25a4d7-ae8f-4261-8ae9-c8c9c2c87414" style="width:43.75%" class="column"><p id="3d5de1a3-5a48-4865-ac5d-5ba51f97a9eb" class=""><strong>Real Name</strong></p><p id="0f2bd9c6-4bb0-4d5e-82d1-561baf7cabdf" class=""><strong>Current Alias</strong></p><p id="88956e57-0b5b-463b-8075-dcc03a3ce61b" class=""><strong>Marital Status</strong></p><p id="740d0caa-0899-4bc0-8a67-564fafd3ad82" class=""><strong>Status</strong></p></div><div id="819e669e-6453-42b2-ac97-216c67918628" style="width:56.25%" class="column"><p id="09d22645-6bbd-4665-9493-6bd816a4766d" class="">Name</p><p id="8883e1eb-197c-4bc1-b4f5-78a4a7d544ec" class="">Alias</p><p id="2a4f44d1-059d-4038-a471-60bdf9b5ddd2" class="">Status</p><p id="223460ad-7274-40d0-a5d6-b1d3203f024f" class="">Alive/Dead</p></div></div><h3 id="c8b9fbe5-dc1b-41b5-be28-beaec8c0eab0" class="block-color-gray_background"><strong>Characteristics</strong></h3><div id="b0f5a957-7fd9-400f-b1b2-2779e1089981" class="column-list"><div id="e2df123d-d437-489c-91a2-1ea9ef877980" style="width:37.5%" class="column"><p id="68d5a77c-6e11-44bf-9a47-b32ebd168a9b" class=""><strong>Gender</strong></p><p id="88328419-83cd-4701-93ef-070e905d7c31" class=""><strong>Orientation</strong></p><p id="9cacae43-8cd5-47e8-966e-83424d512b90" class=""><strong>Age</strong></p><p id="4b803bdc-424b-44fb-8893-8ba83810d6d5" class=""><strong>Height</strong></p><p id="d48ae772-ff66-42cf-82a3-e3d8844c1c7b" class=""><strong>Weight</strong></p><p id="e638f87c-4dd8-4080-9938-ce3cac8386c5" class=""><strong>Eyes</strong></p><p id="cb354dec-83a3-4336-865b-15e1127b5f5b" class=""><strong>Hair</strong></p><p id="fb7783d2-20b3-4908-9d9f-b4ddc480d3bf" class=""><strong>Unusual Features</strong></p></div><div id="3dc7cfe3-8fd2-479d-98f0-053b3555c253" style="width:62.5%" class="column"><p id="46bcccad-94d1-42b3-9168-3ef36eb53ae7" class="">Gender</p><p id="7779950b-3de0-4bc8-8796-73a969c4da92" class="">Sexual Orientation</p><p id="e01cc0a9-3049-4627-b933-8e47348f441d" class="">Age</p><p id="68b3fe17-23a7-4408-8131-498ab1059ae3" class="">Height</p><p id="1954ce41-7c79-4340-8857-5129a9d959c8" class="">Weight</p><p id="a7e09a3f-556b-435b-9771-a60d8d1f72fd" class="">Color</p><p id="399c477f-6a61-4c79-a32c-bc947a0ca991" class="">Color</p><p id="abcde1d8-9b51-4a32-8e3f-c636ca0fdb7a" class="">Other features</p></div></div><h3 id="6dc3bcba-3029-4a6d-a8df-ffb79fce0f03" class="block-color-gray_background"><strong>Extended Information</strong></h3><div id="82ac56ef-be56-4550-a42b-6b629df79f3c" class="column-list"><div id="8ba7c910-24fd-4d61-8d97-94c39eeaf1fa" style="width:37.5%" class="column"><p id="2e525e8c-c49c-41f3-a287-63adfdb1c793" class=""><strong>Affiliations</strong></p><p id="f4dfa17f-c96a-401e-809c-d0d1460a3c6d" class=""><strong>Relatives
+    
+    
+    </strong></p><p id="01f5e98e-79d2-495f-93f8-e516a34ed55f" class=""><strong>Education</strong></p><p id="4a42e665-3d37-4660-b6b0-306ab876bfe1" class=""><strong>Occupation</strong></p></div><div id="8ad00d63-a783-4af7-ac28-fd2f66c739ba" style="width:62.5%" class="column"><p id="e0518f40-0a99-4631-811f-a1aa40392320" class="">Affiliations</p><p id="17361b11-73df-49d2-8d4a-fb82cd98130f" class="">Name (relation)
+    Name (relation)
+    Name (relation)
+    Name (relation)</p><p id="d9055956-ac0e-4a5d-8366-e656047e5542" class="">School</p><p id="b7875469-c40f-40fd-8594-5e42760320df" class="">Work</p></div></div></div></div><p id="6651affe-0abf-4201-ab23-864b6f614b16" class="">
+    </p><h1 id="f954564c-40a1-4cb7-b12f-1f64df2c2db4" class="block-color-yellow_background">Delete everything from here to bottom of the page!</h1><hr id="9a58a261-2090-41f3-a2c1-ac4f541b45ed"/><figure id="80868fb9-2368-43eb-9d00-024f2b6a9f2f" class="block-color-red_background link-to-page"><a href="https://www.notion.so/Sample-Spider-Man-80868fb9236843eb9d00024f2b6a9f2f?pvs=21"><img class="icon" src="Wikipedia%20Template%201619c6247d41404c8d9d734b13d3ad31/icons8-wikipedia-logo-280.png"/>Sample: Spider-Man</a></figure><h3 id="5535e94d-d0c3-4f8c-a00c-35059aad4c81" class="">How to edit the sidebar</h3><p id="d5561bd0-14d1-4b12-9ed8-375c91c50726" class="">As there are two columns under the sidebar already, you should be able to add or update any lines you need to accordingly. If something on the right sidebar column goes to two lines, use &quot;shift+enter&quot; under the left sidebar column for each line it goes over to keep everything even.</p><p id="2b527162-69c8-48d7-b54f-4626bb905a0e" class="">
+    </p><p id="7e848427-9b24-402d-b1c2-dde16eb51b77" class="">If you want to recreate the sidebar from scratch, but aren&#x27;t sure how to get the sub columns back in, edit the page below to however you want to format your sidebar. The name of the page should be whatever you want the topmost line on the sidebar to read.</p><p id="c0331150-1c48-42d4-a51c-a7dee1649363" class="">
+    </p><figure id="bfc898d0-f898-4510-bf43-c2cb3b5fc310" class="link-to-page"><a href="https://www.notion.so/Full-Name-bfc898d0f8984510bf43c2cb3b5fc310?pvs=21">Full Name</a></figure><p id="3fe262f7-c341-43e6-8ca1-6731d7e872a4" class="">
+    Once you&#x27;ve edited the page accordingly, click the gear icon on the right side of the &quot;Sidebar&quot; template to edit said template, then drag the page above into the template.</p><p id="7a33c6ef-aec3-4021-add1-dcc81ad79294" class="">
+    </p><p id="7ed39cbc-e941-4600-99b7-fff0542ac3b9" class="">
+    </p><p id="6a72f012-1b6e-4dc0-9ac9-092ca2d4602f" class="">Once the page is in the template, click the three dots next to the page and choose &quot;turn into &gt; header 3&quot;. Delete the instructions line found in the template block. Everything should now be properly formatted into the template block.</p><p id="619329d9-15b7-42b8-9892-7e52c6a235d0" class="">
+    Drag the template to the second column and click the button to add your new sidebar to your &quot;Wikipedia&quot; template!</p><p id="c5b7a566-b500-42dc-ab0f-417213ef6e25" class="">
+    </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
